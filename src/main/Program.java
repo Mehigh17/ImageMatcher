@@ -11,8 +11,8 @@ public class Program extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("views/MainView.fxml"));
-        primaryStage.setTitle("ImageMatcher");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Image Matcher");
+        primaryStage.setScene(new Scene(root, 600, 455));
         primaryStage.show();
     }
 
