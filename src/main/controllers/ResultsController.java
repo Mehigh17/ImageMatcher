@@ -48,12 +48,6 @@ public class ResultsController implements Initializable {
 
         filePath.setCellValueFactory(new PropertyValueFactory<>("FilePath"));
         distance.setCellValueFactory(new PropertyValueFactory<>("Distance"));
-
-        var a = FXCollections.observableArrayList(
-                new ResultModel("qsd", 100),
-                new ResultModel("test", 13330)
-        );
-        resultData.setItems(a);
     }
 
     public void updateBarChart(HashMap<Integer, Integer> refDistr, File refFile) {
