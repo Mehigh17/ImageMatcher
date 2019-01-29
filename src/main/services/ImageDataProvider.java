@@ -7,6 +7,15 @@ import java.util.HashMap;
 
 public class ImageDataProvider {
 
+    public int getGrayscaleDistance(HashMap<Integer, Integer> dist1, HashMap<Integer, Integer> dist2) {
+        int distance = 0;
+
+        for(var i = 0; i < 255; i++)
+            distance += Math.abs(dist1.getOrDefault(i, 0) - dist2.getOrDefault(i, 0));
+
+        return distance;
+    }
+
     public HashMap<Integer, Integer> getGrayscaleDistribution(Image image) throws Exception {
         if(image == null)
             throw new Exception("Image cannot be null.");
