@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxWidth="Infinity" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.ResultsController">
+
+    <BarChart fx:id="barChart" maxWidth="Infinity" minWidth="600">
+        <xAxis>
+            <CategoryAxis label="Grayscale Intensity (0 - 255)" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Color Occurrence" side="LEFT" />
+        </yAxis>
+        <opaqueInsets>
+            <Insets />
+        </opaqueInsets>
+        <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </VBox.margin>
+    </BarChart>
+
+    <TableView fx:id="resultData" maxWidth="Infinity" minWidth="200">
+        <columns>
+            <TableColumn fx:id="filePath" editable="false" minWidth="100.0" prefWidth="450.0" text="File path" />
+            <TableColumn fx:id="distance" editable="false" maxWidth="Infinity" minWidth="100.0" prefWidth="200.0" text="Distance" />
+        </columns>
+        <VBox.margin>
+            <Insets bottom="10.0" />
+        </VBox.margin>
+    </TableView>
+
+    <HBox>
+        <Label alignment="CENTER" maxHeight="Infinity" text="Closest image to reference image:">
+            <HBox.margin>
+                <Insets left="10.0" right="10.0" />
+            </HBox.margin>
+        </Label>
+        <ImageView fx:id="referenceImageView" fitHeight="150" fitWidth="150" />
+    </HBox>
+
+    <VBox.margin>
+        <Insets bottom="10.0" />
+    </VBox.margin>
+</VBox>
