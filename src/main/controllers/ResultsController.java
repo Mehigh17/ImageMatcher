@@ -48,22 +48,14 @@ public class ResultsController implements Initializable {
 
         filePath.setCellValueFactory(new PropertyValueFactory<>("FilePath"));
         distance.setCellValueFactory(new PropertyValueFactory<>("Distance"));
-
-        var a = FXCollections.observableArrayList(
-                new ResultModel("qsd", 100),
-                new ResultModel("test", 13330)
-        );
-        resultData.setItems(a);
     }
 
     public void updateBarChart(HashMap<Integer, Integer> refDistr, File refFile) {
-        barChart.getData().clear();
-
         var series = new XYChart.Series();
         refDistr.forEach((k, v) -> {
             series.getData().add(new XYChart.Data(String.format("%s", k), v));
         });
-        barChart.getData().addAll(series);
+        barChart.setData(FXCollections.observableArrayList(series));
 
         var chartTitle = String.format("Grayscale distribution for '%s'", refFile.getName());
         barChart.setTitle(chartTitle);
