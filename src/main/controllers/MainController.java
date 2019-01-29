@@ -4,7 +4,6 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import main.services.ImageDataProvider;
@@ -13,7 +12,6 @@ public class MainController {
 
     public Button selectFileButton;
     public Button selectDirectoryButton;
-    public Label titleFileName;
     public BarChart barChart;
 
     private ImageDataProvider _imageDataProvider;
