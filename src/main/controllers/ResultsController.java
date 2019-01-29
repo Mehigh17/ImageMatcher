@@ -75,6 +75,8 @@ public class ResultsController implements Initializable {
             list.add(new ResultModel(v.getUrl(), k));
         });
         resultData.setItems(FXCollections.observableArrayList(list));
+
+        referenceImageView.setImage(distances.get(distances.firstKey()));
     }
 
 }
